@@ -61,6 +61,13 @@ select {
   border: none;
 }
 
+.all-cities {
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: blue;
+}
+
 .date {
   opacity: 0.7;
 }

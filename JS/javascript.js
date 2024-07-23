@@ -1,3 +1,23 @@
+let mexicoCityHtml = `
+  <div class="city" id="mexico-city">
+    <div>
+    <h2>Mexico City</h2>
+    <div class="date"></div>
+    </div>
+    <div class="time"></div>
+  </div>
+`;
+
+let parisCityHtml = `
+  <div class="city" id="paris">
+    <div>
+    <h2>Paris</h2>
+    <div class="date"></div>
+    </div>
+    <div class="time"></div>
+ </div>
+`;
+
 function updateTime() {
   //Mexico City
   let mexicoElement = document.querySelector("#mexico-city");
@@ -53,17 +73,45 @@ function updateCity(event) {
           <div class="time">${cityTime.format(
             "h:mm:ss [<small>]A[</small>]"
           )}</div>
-        </div>`;
+        </div>
+        <div class="all-cities" id="all-cities">All cities</div>`;
+
+  let allCitiesElement = document.querySelector("#all-cities");
+  if (allCitiesElement) {
+    allCitiesElement.addEventListener("click", function () {
+      let citiesElement = document.querySelector("#cities");
+      citiesElement.innerHTML = mexicoCityHtml + parisCityHtml;
+      updateTime();
+
+      let citiesSelectElement = document.querySelector("#city");
+      if (citiesSelectElement) {
+        citiesSelectElement.value = ""; // Establece el valor a la opción predeterminada
+      }
+    });
+  }
 }
 
-let citiesSelectElement = document.querySelector("#city");
+function setupEventListeners() {
+  let citiesSelectElement = document.querySelector("#city");
+  if (citiesSelectElement) {
+    citiesSelectElement.addEventListener("change", updateCity);
+  }
+}
 
-citiesSelectElement.addEventListener("change", updateCity);
+function initializeView() {
+  let citiesElement = document.querySelector("#cities");
+  if (citiesElement) {
+    citiesElement.innerHTML = mexicoCityHtml + parisCityHtml;
+  }
+  updateTime();
+}
 
 function updateAll() {
   updateTime();
   updateCity();
 }
 
+setupEventListeners();
+initializeView();
 updateAll();
 setInterval(updateAll, 1000);
