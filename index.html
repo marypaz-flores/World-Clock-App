@@ -18,26 +18,28 @@
     <div class="container">
       <h1>World Clock</h1>
 
-      <select>
+      <select id="city">
         <option value="">Select a city...</option>
-        <option value="">London</option>
-        <option value="">New York</option>
-        <option value="">Paris</option>
+        <option value="Europe/London">London</option>
+        <option value="America/New_York">New York</option>
+        <option value="Asia/Shanghai">Shanghai</option>
       </select>
 
-      <div class="city" id="mexico-city">
-        <div>
-          <h2>Mexico City</h2>
-          <div class="date"></div>
+      <div id="cities">
+        <div class="city" id="mexico-city">
+          <div>
+            <h2>Mexico City</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time"></div>
-      </div>
-      <div class="city" id="paris">
-        <div>
-          <h2>Paris</h2>
-          <div class="date"></div>
+        <div class="city" id="paris">
+          <div>
+            <h2>Paris</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
         </div>
-        <div class="time"></div>
       </div>
     </div>
 
@@ -47,13 +49,13 @@
         <a href="https://github.com/marypaz-flores" target="_blank"
           >Marypaz Flores</a
         >
-        and is
+        and is on
         <a href="https://github.com/marypaz-flores/Weather-App" target="_blank">
-          on GitHub</a
+          GitHub</a
         >
-        and
+        and hosted on
         <a href="https://amfm-world-clock.netlify.app/" target="_blank"
-          >hosted on Netlify</a
+          >Netlify</a
         >
       </p>
     </footer>
